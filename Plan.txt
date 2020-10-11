@@ -22,8 +22,8 @@ Model: Game (that maps to a db table named games)
  - name:string (varchar)
  - release_date:string
  - description:text
- - rating:integer
- - total_rating:integer
+ - rating:decimal
+ - total_rating:decimal
  - platform_id:integer (FK)
  - developer_id:integer (FK)
  - created_at:timestamp
