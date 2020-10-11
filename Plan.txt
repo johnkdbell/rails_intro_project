@@ -1,0 +1,60 @@
+Model: Developer (That maps to a db table named developers)
+ - id (auto-inc primary key)
+ - name:string (varchar)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Model: Platform (that maps to a db table named platforms)
+ - id (auto-inc primary key)
+ - name:string (varchar)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Model: GamePlatform (that maps to a db table named game_platforms)
+ - id (auto-inc primary key)
+ - game_id:integer (FK)
+ - platform_id:integer (FK)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Model: Game (that maps to a db table named games)
+ - id (auto-inc primary key)
+ - name:string (varchar)
+ - release_date:string
+ - description:text
+ - rating:integer
+ - total_rating:integer
+ - platform_id:integer (FK)
+ - developer_id:integer (FK)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Model: GameGenre (that maps to a db table named game_genres)
+ - id (auto-inc primary key)
+ - game_id:integer (FK)
+ - genre_id:integer (FK)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Model: Genre (that maps to a db table named genres)
+ - id (auto-inc primary key)
+ - name:string (varchar)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+
+
+
+run rails server: rails s
+
+rails g model Company name:string
+
+To add tables to database: rails db:migrate
+
+to open rails console: rails c
+
+show routes: rails routes
+
+Create a new company: Company.create(:name => "Test")
+
+rails g migration AddCompanyRefToBeers company:references
