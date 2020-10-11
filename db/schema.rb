@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_222542) do
+ActiveRecord::Schema.define(version: 2020_10_11_231305) do
 
   create_table "developers", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_222542) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
-    t.string "release_date"
+    t.integer "release_date"
     t.text "description"
     t.decimal "rating"
     t.decimal "total_rating"
