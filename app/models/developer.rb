@@ -1,4 +1,4 @@
 class Developer < ApplicationRecord
   has_many :games
-  validates :name, presences: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end
