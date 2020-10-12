@@ -4,9 +4,9 @@
 
 <h2>Games</h2>
 <ul>
-  <%= @developer.games.each do |game| %>
+  <% @developer.games.each do |game| %>
     <li><%= link_to game.name, game %></li>
   <% end %>
 </ul>
 
-<!-- <p><%= link_to 'Home', developers_path %></p> -->
+<p><%= link_to 'Home', developers_path %></p>
