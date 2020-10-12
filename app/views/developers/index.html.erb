@@ -1,2 +1,17 @@
-<h1>Developers#index</h1>
-<p>Find me in app/views/developers/index.html.erb</p>
+<h1>Developers</h1>
+<div class="container">
+</br>
+  <div class="row">
+    <div class="col">
+      <h5>Name</h5>
+    </div>
+  </div>
+  <% @developers.each do |developer| %>
+    <div class="row ml">
+      <div class="col">
+        <%= link_to developer.name, developer %>
+      </div>
+    </div>
+    </br>
+  <% end %>
+</div>

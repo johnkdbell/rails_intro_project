@@ -1,2 +1,12 @@
-<h1>Developers#show</h1>
-<p>Find me in app/views/developers/show.html.erb</p>
+<h1><%= @developer.name %></h1>
+
+<p>This developer made <%= @developer.games.count %> games.</p>
+
+<h2>Games</h2>
+<ul>
+  <%= @developer.games.each do |game| %>
+    <li><%= link_to game.name, game %></li>
+  <% end %>
+</ul>
+
+<!-- <p><%= link_to 'Home', developers_path %></p> -->
