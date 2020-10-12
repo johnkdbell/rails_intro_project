@@ -20,7 +20,7 @@ Model: GamePlatform (that maps to a db table named game_platforms)
 Model: Game (that maps to a db table named games)
  - id (auto-inc primary key)
  - name:string (varchar)
- - release_date:string
+ - release_date:integer
  - description:text
  - rating:decimal
  - total_rating:decimal
@@ -43,8 +43,6 @@ Model: Genre (that maps to a db table named genres)
  - updated_at:timestamp
 
 
-
-
 run rails server: rails s
 
 rails g model Company name:string
@@ -58,3 +56,56 @@ show routes: rails routes
 Create a new company: Company.create(:name => "Test")
 
 rails g migration AddCompanyRefToBeers company:references
+
+
+https://app.quickdatabasediagrams.com/#/
+
+Developer
+-
+id PK varchar
+name string
+created_at timestamp
+updated_at timestamp
+
+Platform
+-
+id PK varchar
+name string
+created_at timestamp
+updated_at timestamp
+
+GamePlatform
+-
+id PK varchar
+game_id integer FK >- Game.id
+platform_id integer FK >- Platform.id
+created_at timestamp
+updated_at timestamp
+
+Game
+-
+id PK varchar
+name string
+release_date integer
+description text
+rating decimal
+total_rating decimal
+platform_id integer FK
+developer_id integer FK >- Developer.id
+created_at timestamp
+updated_at timestamp
+
+GameGenre
+-
+id PK varchar
+game_id integer FK >- Game.id
+genre_id integer FK >- Genre.id
+created_at timestamp
+updated_at timestamp
+
+Genre
+-
+id PK varchar
+name string
+created_at timestamp
+updated_at timestamp
