@@ -90,7 +90,7 @@ release_date integer
 description text
 rating decimal
 total_rating decimal
-platform_id integer FK
+platform_id integer FK >- Developer.id
 developer_id integer FK >- Developer.id
 created_at timestamp
 updated_at timestamp

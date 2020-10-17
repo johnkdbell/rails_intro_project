@@ -15,6 +15,14 @@
   <body>
     <section class="section">
       <div class="container">
+        <%= form_with(url: search_games_path, method: :get, local: true) do %>
+          <div>
+            <div>
+              <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Video Games") %>
+              <%= submit_tag("Search", class: "button") %>
+            </div>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </section>
