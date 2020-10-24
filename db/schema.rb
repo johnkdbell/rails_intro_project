@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_23_173422) do
+ActiveRecord::Schema.define(version: 2020_10_24_231752) do
 
   create_table "developers", force: :cascade do |t|
     t.string "name"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2020_10_23_173422) do
     t.string "name"
     t.integer "release_date"
     t.text "description"
-    t.decimal "rating"
-    t.decimal "total_rating"
+    t.integer "rating"
+    t.integer "total_rating"
     t.integer "developer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
