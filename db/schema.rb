@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2020_10_24_231752) do
 
   create_table "developers", force: :cascade do |t|
     t.string "name"
-    t.string "origin_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "origin_id"
   end
 
   create_table "game_genres", force: :cascade do |t|
