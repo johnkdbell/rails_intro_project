@@ -1,13 +1,9 @@
 <h1>Games</h1>
 
-<%= form_with(url: search_games_path, method: :get, local: true) do |f| %>
-  <%= f.label :category, for: @games %>
-  <%= f.select :category, @search_genres, { include_blank: 'Please choose' }, { id: @games } %>
-<% end %>
-
-
 <div class="container">
-</br>
+
+  </br>
+
   <div class="row">
     <div class="col-3">
       <h5>Name</h5>
@@ -22,6 +18,7 @@
       <h5>Rating</h5>
     </div>
   </div>
+
   <% @games.each do |game| %>
     <div class="row ml">
       <div class="col-3">
@@ -31,7 +28,7 @@
         <%= game.developer.name %>
       </div>
       <div class="col">
-        <%= game.release_date %>
+        <%= DateTime.strptime(game.release_date.to_s,'%s').strftime("%d/%m/%y") if game.release_date != nil %>
       </div>
       <div class="col">
         <%= game.rating %> from <%= game.total_rating %> individuals
@@ -40,7 +37,8 @@
     </br>
   <% end %>
 
-  <div class="center">
-    <%= paginate @games %>
+  <div class="container pagination justify-content-center">
+    <%= paginate @games, theme: 'twitter-bootstrap-4', pagination_class: "pagination-md" %>
   </div>
+
 </div>

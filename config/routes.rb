@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
   resources :games, only: [:index, :show] do
     collection do
       get "search"
@@ -7,4 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :developers, only: [:index, :show]
+
+
+  root to: "home#index"
 end

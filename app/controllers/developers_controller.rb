@@ -1,6 +1,6 @@
 class DevelopersController < ApplicationController
   def index
-    @developers = Developer.all
+    @developers = Developer.all.page(params[:page])
   end
 
   def show

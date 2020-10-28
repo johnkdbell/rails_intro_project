@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   belongs_to :developer
 
-  has_many :game_genres
+  has_many :game_genres, -> {includes :genres}
   has_many :genres, through: :game_genres
 
   has_many :game_platforms
@@ -13,6 +13,8 @@ class Game < ApplicationRecord
 
   validates :name, presence: true
   validates :rating, :total_rating, numericality: true
+
+  paginates_per 5
 
   def genres_list
     genres.map { |genre| genre.name }.join

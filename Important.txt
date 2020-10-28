@@ -1,0 +1,5 @@
+
+Put this inside application.html.erb
+
+              <%= f.label :category, for: @games %>
+              <%= f.select :category, @search_genres, { include_blank: 'Please choose' }, { id: @games } %>
