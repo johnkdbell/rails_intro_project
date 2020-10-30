@@ -1,3 +1,5 @@
+<% content_for(:html_title) { "Search: " + params[:keywords] } %>
+
 <p class="mb-5">Search results found <%= pluralize(@games.count, 'video game') %> when searching for: <%= params[:keywords] %></p>
 
 <ul>

@@ -1,18 +1,39 @@
-<h1><%= @game.name %></h1>
+</br>
 
-<p>
-  <strong>Genres: </strong>
-  <%= @game.genres_list %>
-</p>
+<% content_for(:html_title) { @game.name } %>
 
-<p>
-  <strong>Platform: </strong>
-  <%= @game.platforms_list %>
-</p>
+<div class="text-decoration-none">
+  <a href='#' style="text-decoration:none;" onclick='history.go(-1);return false;'>Return</a>
+</div>
 
-<p>
-  <div>
-    <h5>Description</h5>
-    <%= @game.description %>
+</br>
+
+<div class="container">
+  <h1><%= @game.name %></h1>
+
+  <div class="container">
+
+    <p>
+      <strong>Genres: </strong>
+      <%= @game.genres_list %>
+    </p>
+    <p>
+      <strong>Platform: </strong>
+      <%= @game.platforms_list %>
+    </p>
+
+    <p>
+      <strong>Developer: </strong>
+      <%= link_to @game.developer.name, @game.developer %>
+    </p>
+
+    <p>
+      <div>
+        <h5 style="font-weight: bold;">Description:</h5>
+        <%= @game.description %>
+      </div>
+    </p>
+
   </div>
-</p>
+</div>
+

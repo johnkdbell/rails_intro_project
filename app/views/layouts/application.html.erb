@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Video Game Project!</title>
+    <title><%= yield(:html_title) + " - " if content_for?(:html_title) %>Video Game Project!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -52,60 +52,24 @@
     </section>
 
     <footer class="page-footer font-small blue pt-4 bg-light" style="flex: 0 0 50px;margin-top:auto;">
-      <div class="container text-center text-md-left">
+      </br>
+      <div class="container">
         <div class="row">
-          <div class="col-md-6 mt-md-0 mt-3">
-            <h5 class="text-uppercase">Footer Content</h5>
-            <p>Here you can use rows and columns to organize your footer content.</p>
-          </div>
+          <h5 class="text-uppercase">Site Map</h5>
+            <div class="col">
+              <h6><a href="/games">Games</a></h6>
+            </div>
 
-          <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col">
+              <h6><a href="/developers">Developers</a></h6>
+            </div>
 
-          <div class="col-md-3 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-3 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Links</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
+            <div class="col">
+              <h6><a href="/about">About Page</a></h6>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-      </div>
-
-      <li><%= link_to 'Home', root_path %></li>
-
+      </br></br>
     </footer>
   </body>
 </html>

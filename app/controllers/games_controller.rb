@@ -12,7 +12,6 @@ class GamesController < ApplicationController
     @search_genres = Genre.pluck(:name).uniq
     wildcard_search = "%#{params[:keywords]}%"
     genre = "%#{params[:category]}%"
-
     @games = Game.where("name LIKE ?", wildcard_search).order("name ASC")
   end
 end

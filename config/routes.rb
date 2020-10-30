@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :developers, only: [:index, :show]
 
-
   root to: "home#index"
+
+  resources :about, only: [:index]
+
 end
