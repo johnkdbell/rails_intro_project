@@ -1,5 +1,6 @@
 <% content_for(:html_title) { "Developers" } %>
 
+</br>
 
 <h1>Developers</h1>
 <div class="container">
@@ -12,13 +13,12 @@
   </div>
   <% @developers.each do |developer| %>
 
-    <div class="list-group-item list-group-item-action">
-      <div class="col">
-        <%= link_to developer.name, developer %>
-      </div>
+  <div class="list-group-item list-group-item-action">
+    <div class="col">
+      <%= link_to developer.name, developer %>
     </div>
-
-    </br>
+  </div>
+  </br>
   <% end %>
 
   <div class="container pagination justify-content-center" >

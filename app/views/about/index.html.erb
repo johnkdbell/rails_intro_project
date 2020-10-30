@@ -1,2 +1,33 @@
-<h1>About#index</h1>
-<p>Find me in app/views/about/index.html.erb</p>
+<% content_for(:html_title) { "About" } %>
+
+</br>
+<h1>About</h1>
+
+  <div class="row">
+    <div class="col-7">
+      <%= image_tag("ERD.png", :alt => "ERD", :style => "width:100%;max-width:600px;") %>
+    </div>
+    <div class="col-5">
+  </br>
+    <p>For the Rails Intro Project, I plan to use the IGDB API, and will pull information from four separate URLs:</p>
+    <ol>
+      <li><a href="https://api.igdb.com/v4/games/">https://api.igdb.com/v4/games/</a></li>
+      <li><a href="https://api.igdb.com/v4/companies/">https://api.igdb.com/v4/companies/</a></li>
+      <li><a href="https://api.igdb.com/v4/platforms/">https://api.igdb.com/v4/platforms/</a></li>
+      <li><a href="https://api.igdb.com/v4/genres/">https://api.igdb.com/v4/genres/</a></li>
+    </ol>
+    <p>Provided in the database schema below are five tables that will be used in the development of the website.</p>
+    <p>The <em>developers</em> table will consist of the names of all developers which is found in the companies URL;</p>
+    <p>The <em>genres</em> table will store the genre names which is found in the genres URL;</p>
+    <p>The <em>games</em> table will contain the name, release date, description, rating, and total ratings (amount of people who rated) which is found in the games URL, in addition to the foreign keys of the <em>developers</em> table and <em>platforms</em> table;</p>
+    <p>The <em>platforms</em> table will consist of the names of each console/platform which can be found in the platforms URL;</p>
+    <p>The <em>gamegenres</em> and <em>gameplatforms</em> tables will have a many-to-many relationship the <em>games</em> table and either the <em>genres</em> or <em>platforms</em> table.</p>
+    </div>
+  </div>
+</div>
+
+<div>
+  </br>
+
+  </br></br>
+</div>
