@@ -13,11 +13,10 @@
   </div>
   <% @developers.each do |developer| %>
 
-  <div class="list-group-item list-group-item-action">
-    <div class="col">
-      <%= link_to developer.name, developer %>
-    </div>
+  <div class="col">
+    <%= link_to developer.name, developer, class: "list-group-item list-group-item-action"  %>
   </div>
+
   </br>
   <% end %>
 
